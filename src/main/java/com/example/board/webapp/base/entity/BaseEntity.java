@@ -1,6 +1,8 @@
 package com.example.board.webapp.base.entity;
 
+import lombok.AccessLevel;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -16,6 +18,7 @@ import java.time.LocalDateTime;
 @Getter
 @SuperBuilder
 @MappedSuperclass
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @EntityListeners(AuditingEntityListener.class)
 public class BaseEntity {
     @Id
